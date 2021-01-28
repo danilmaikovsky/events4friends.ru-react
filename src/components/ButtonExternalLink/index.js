@@ -1,12 +1,14 @@
 import React from 'react';
+import stylePropType from 'react-style-proptype';
+import PropTypes from 'prop-types';
 import cn from 'classnames';
 import './ButtonExternalLink.css';
 
 const ButtonExternalLink = ({
   href,
-  icon,
-  alt,
-  title,
+  icon = '',
+  alt = '',
+  title = '',
   style,
   classList = [],
   className = '',
@@ -21,6 +23,16 @@ const ButtonExternalLink = ({
       {title && <span className="link__text"> {title} </span>}
     </a>
   );
+};
+
+ButtonExternalLink.propTypes = {
+  href: PropTypes.string.isRequired,
+  icon: PropTypes.string,
+  alt: PropTypes.string,
+  title: PropTypes.string,
+  style: stylePropType,
+  classList: PropTypes.arrayOf(PropTypes.string),
+  className: PropTypes.string,
 };
 
 export default ButtonExternalLink;
