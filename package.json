@@ -10,7 +10,8 @@
     "test": "react-scripts test",
     "predeploy": "npm run build",
     "eject": "react-scripts eject",
-    "eslint": "eslint src --ext .js --fix"
+    "eslint": "eslint src --ext .js --fix",
+    "eslint-no-fix": "eslint src --ext .js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,6 +36,7 @@
     "react-moment": "^0.8.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.0.1",
+    "react-style-proptype": "^3.2.2",
     "react-yandex-maps": "^4.6.0",
     "reactstrap": "^6.5.0"
   },
