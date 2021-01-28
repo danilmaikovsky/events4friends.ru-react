@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import cn from 'classnames';
 import './ButtonAction.css';
 
@@ -12,8 +13,8 @@ export const ButtonAction = ({
   type = ButtonActionType.default,
   onClick = () => {},
   active = false,
-  label,
-  children,
+  label = '',
+  children = '',
 }) => (
   <button
     type="button"
@@ -26,3 +27,11 @@ export const ButtonAction = ({
     <span className="button-action__label">{label || children}</span>
   </button>
 );
+
+ButtonAction.propTypes = {
+  type: PropTypes.oneOf(Object.keys(ButtonActionType)),
+  onClick: PropTypes.func,
+  active: PropTypes.bool,
+  label: PropTypes.string,
+  children: PropTypes.string,
+};
