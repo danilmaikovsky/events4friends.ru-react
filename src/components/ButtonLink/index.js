@@ -1,12 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import stylePropType from 'react-style-proptype';
 import cn from 'classnames';
 import { Link } from 'react-router-dom';
 import './ButtonLink.css';
 
 const ButtonLink = ({
   to,
-  icon,
-  alt,
+  icon = '',
+  alt = '',
   title,
   style,
   className = '',
@@ -28,6 +30,16 @@ const ButtonLink = ({
       <span className="link__text"> {title} </span>
     </Link>
   );
+};
+
+ButtonLink.propTypes = {
+  to: PropTypes.string.isRequired,
+  icon: PropTypes.string,
+  alt: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  style: stylePropType,
+  className: PropTypes.string,
+  classList: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default ButtonLink;
